@@ -1,0 +1,94 @@
+.footer {
+    background-color: $theme_color_1;
+    ul li {
+        margin-bottom: 8.79px;
+    }
+    ul li:last-child {
+        margin-bottom: 0px;
+    }
+
+    &__inner {
+        padding: 60px 0 55px 0; 
+        display: flex;
+        font-size: 0.875rem;
+        line-height: 1.17;
+        @media (max-width: $md2 + px) {
+            flex-wrap: wrap;
+        }
+    }
+   
+
+    &__logo {
+        flex: 0 0 calc(100% / 12 * 2);
+        padding-right: 30px;
+        a {
+            display: block;
+            height: 46px;
+            width: 100%;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: left;
+            }
+        }
+        @media (max-width: $md4 + px) {
+            padding-right: 0;
+        }
+    }
+
+    &__addresses {
+        flex: 0 0 calc(100% / 12 * 3);
+    }
+
+    &__phones {
+        flex: 0 0 calc(100% / 12 * 3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__dev {
+        flex: 0 0 calc(100% / 12 * 4);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__link {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    a.footer__dark-link,
+    a.footer__dark-link:visited {
+        color: $theme_color_2;
+    }
+    
+    &__flex-item {
+        @media (max-width: $md2 + px) {
+            flex: 0 0 calc(100% / 12 * 4);
+            margin-bottom: 20px;
+            justify-content: flex-start;
+        }
+        @media (max-width: $md3 + px) {
+            flex: 0 0 calc(100% / 12 * 6);
+            align-items: flex-start;
+        }
+        @media (max-width: $md4 + px) {
+            flex: 0 0 calc(100% / 12 * 12);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                max-width: 160px;
+                img {
+                    object-position: center;
+                }
+            }
+        }
+    }
+}

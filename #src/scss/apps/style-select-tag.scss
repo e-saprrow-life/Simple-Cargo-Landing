@@ -1,0 +1,87 @@
+.style-select {
+    flex: 0 0 calc((100% / 6) - 30px);
+    max-width: calc((100% / 6) - 30px);
+    min-width: 150px;
+    margin: 0 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #999999;
+    display: flex;
+    position: relative;
+	
+    &__label {
+        flex: 0 0 auto;
+        display: flex;
+    } 
+
+    // Показ выбранного элемента
+	&__selected-elem-preview {
+        flex: 1 1 auto;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0 15px 0 5px;
+        text-overflow: ellipsis;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotateX(0deg);
+            height: 10px;
+            width: 12px;
+            //background-image: url('../img/icons/Arrow-Down.svg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            //transition: transform $mTrans; 
+        }
+    } 
+
+    // Показ выбранного элемента активен
+	&__selected-elem-preview_active {
+        &::after {
+            transform: translateY(-50%) rotateX(-180deg);
+            //transition: transform $mTrans; 
+        }
+    } 
+
+	// Список вариантов
+    &__list {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: rgb(240, 240, 240);
+        max-height: 0px;
+        //transition: max-height $mTrans;
+        overflow: hidden; 
+        z-index: 20;
+    } 
+    // Активный список вариантов
+	&__list_active {
+        //transition: max-height $mTrans;
+        z-index: 21;
+        
+    }
+    // Элемент списка 
+	&__list-item,
+    &__list-no-select {
+        //transition: background-color $mTrans;
+        padding: 5px 10px;
+        font-size: 14px;
+        &:hover {
+            background-color:rgba(100, 100, 100, 0.5);
+            ///transition: background-color $mTrans;
+        }
+    }
+}

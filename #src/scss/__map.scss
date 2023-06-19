@@ -1,0 +1,44 @@
+.map {
+    position: relative;
+    padding-bottom: 23.33%;
+    @media (max-width: $md2 + px) {
+        padding-bottom: 33.33%;
+    }
+    @media (max-width: $md3 + px) {
+        padding-bottom: 50%;
+    }
+    @media (max-width: $md4 + px) {
+        padding-bottom: 100%;
+    }
+    @media (max-width: $md5 + px) {
+        padding-bottom: 150%;
+    }
+    &__wrapper, 
+    &__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    &__wrapper {
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__filter {
+        background-color: #393f478e;
+        pointer-events: none;
+        transition: background-color 1s ease 0s;
+        @media (max-width: $md2 + px) {
+            background-color: #393f4738;
+        }
+    }
+    &:hover {
+        .map__filter {
+            background-color: #393f4700;
+            transition: background-color 1s ease 0s;
+        }
+    }
+}

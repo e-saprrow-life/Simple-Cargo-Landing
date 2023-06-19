@@ -1,0 +1,61 @@
+    @charset "UTF-8";
+    @import 'mixins.scss';//----------------- Миксины	
+    @import 'templates/normalize.scss';//---- Обнуление стилей браузера
+//----- Параметры шрифтов по-умолчанию ------------------------------------------------------------------------
+    @import 'fonts.scss';//------------------ Подключение шрифтов
+    $font_family: 'Roboto', sans-serif;
+    $font-size: 16px;
+    $line-height: 1.5;
+    $color: #333333;
+
+
+
+    $theme_color_1: #C8A35F;
+    $theme_color_1_hover: #cc8e1b;
+    $theme_color_2: #2F343A;
+    $theme_color_2_hover: #4c545e;
+    $theme_color_3: #393F47;
+    $theme_color_3_opacity: #393f47e8;
+
+    $light_text_color: #ffffff;
+//----- /Шрифты -----------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+//----- Параметры докумета ------------------------------------------------------------
+
+    $min_width: 320;                    $max_width: 1920;
+    $container_max_width: 1110;         $container_padding: 15;
+    // Брейкпоинты:
+    $md1: $container_max_width + ($container_padding * 2);    
+    $md2: 991.98;   
+    $md3: 767.98;                       
+    $md4: 479.98;   
+    $md5: 374.98;                       
+    $md6: 320;
+
+//----- / Параметры докумета ------------------------------------------------------
+    $transition: 0.4s ease 0s;
+    $transition_delay: 0.3s ease 0.3s;
+
+    @import 'templates/_commons.scss';
+    @import 'templates/_burger-menu.scss';
+
+//----- Подключение Плагинов -------------------------------------------------------
+
+//    @import 'apps/accordion.scss';//-------------- Аккордеон
+//    @import 'apps/sparrow-gallery.scss';//-------- Моя галлерея
+//    @import 'apps/style-select-tag.scss';//------- Стилизация выпадающего списка select
+
+//----- /Подключение Плагинов -------------------------------------------------------
+
+//----- Подключение Файлов --------------------------------------------------------
+        @import '__header.scss'; 
+        @import '__baner.scss'; 
+        @import '__cargo.scss'; 
+        @import '__services.scss'; 
+        @import '__about.scss'; 
+        @import '__map.scss'; 
+        @import '__footer.scss'; 
+//----- /Подключение Файлов -------------------------------------------------------
+
+//----- Библиотеки ----------------------------------------------------------------
+        @import 'libs/wow.scss'; 

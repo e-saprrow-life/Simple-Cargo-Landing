@@ -1,0 +1,31 @@
+{
+  "name": "e.sparrow.life",
+  "version": "1.0.1",
+  "description": "My Gulp Project",
+  "main": "index.html",
+  "author": "e.saprrow.life",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconfu/svg-inject": "^1.2.3",
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-fonter": "^0.3.0",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "latest",
+    "gulp-sass": "^5.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-uglify-es": "latest",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-html": "^1.0.2",
+    "gulp-webpcss": "^1.1.1",
+    "sass": "^1.36.0",
+    "webp-converter": "2.2.3"
+  }
+}

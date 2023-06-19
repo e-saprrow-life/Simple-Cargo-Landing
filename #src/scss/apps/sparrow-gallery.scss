@@ -1,0 +1,181 @@
+.sparrow-gallery {
+    &__list { /* Список всех изображений */
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+    }
+
+    &__item {
+        flex: 0 0 25%;
+        height: 200px; 
+        padding: 10px;
+        @media (max-width: $md2 + px) {
+            flex: 0 0 33.33%;
+            height: 175px;
+        }
+        @media (max-width: $md4 + px) {
+            flex: 0 0 50%; 
+            height: 150px; 
+        }
+    }
+
+    &__image-wrapper { /* Превью изображения. Внешняя оболочка */
+        height: 100%;
+        width: 100%;
+        position: relative; 
+        overflow: hidden;
+        //border-radius: 8px;
+        @media (min-width: $md3 + px) {
+    
+        }
+        cursor: pointer;
+    }
+
+    @media (min-width: $md3 + px) {
+        &__image-wrapper:hover {
+        }
+    }
+
+    &__image-inner { /* Внутренняя оболочка превью изображения */
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__img {  /* Изображение */
+        
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+/* Popup */    
+    &__popup-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 60;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.924);
+        opacity: 0;
+        transition: visibility 0.3s ease 0.1s;
+        visibility: hidden;
+        @media (max-width: $md3 + px) {
+            padding: 10px;
+        }
+    }
+
+    &__popup-wrapper_active {
+        visibility: visible;
+        opacity: 1;
+        
+        transition: visibility 0.5s ease 0s;
+    }
+
+    &__popup-inner { 
+        height: 100%;
+        display: flex;
+        flex-direction: column;  
+        position: relative;
+    }
+
+    &__popup-top-ui { /* Попап верхняя панель */
+        flex: 0 0 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__popup-top-close {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 61;
+        height: 30px;
+        width: 30px;
+        font-size: 36px;
+        line-height: 0.5;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    @media (min-width: $md3 + px) {
+        &__popup-top-close {
+            transition: 0.3s ease 0s;
+        }
+        &__popup-top-close:hover {
+            transform: scale(1.2);
+            
+        }
+    }
+    &__popup-viewer { /* Внешняя оболочка просмотра фотографии */
+        flex: 1 1 auto;
+        position: relative;
+        width: 100%;
+        max-width: 1110px;
+        margin: 0 auto;
+        @media (min-width: $md3 + px) {
+            //background-color: rgb(51, 51, 51);
+            //box-shadow: 0px 0px 7px 1px #272727;
+        }
+        
+    }
+
+    &__popup-viewer-inner { /* Внутренняя оболочка фотографии */
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    &__popup-viewer-photo {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+        filter: drop-shadow(0px 0px 8px rgb(22, 22, 22));
+    }
+
+    &__popup-bottom-ui { /* Попап нижняя панель */
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    &__btn { /* Кнопки. Общие стили */
+        margin: 0 15px;
+        height: 40px;
+        width: 40px;
+        font-size: 24px;
+        color: #ffffff;
+        line-height: 0.2;
+        background-color: rgba(51, 51, 51, 0);
+        @media (max-width: $md3 + px) {
+            margin: 0 40px;
+            font-size: 36px;
+        }
+    }
+    @media (min-width: $md3 + px) {
+        &__btn {
+            transition: 0.3s ease 0s;
+        }
+        &__btn:hover {
+            transform: scale(1.2);
+        }
+        &__btn:active {
+            transform: scale(1);
+        }
+    }
+
+    &__btn-prev { /* Кнопка назад */
+    }
+
+    &__btn-next { /* Кнопка вперед */
+    }
+}

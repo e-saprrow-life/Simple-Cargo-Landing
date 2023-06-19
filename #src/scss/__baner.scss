@@ -1,0 +1,90 @@
+.baner {
+    background-image: url('../img/s1-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $light_text_color;
+    position: relative;
+    @media (max-width: $md3 + px) {
+        height: 100vh;
+    }
+    &__inner {
+        padding: 155px 0 220px 0;
+        display: flex;
+        justify-content: center;
+        @media (max-width: $md2 + px) {
+            padding: 100px 0 150px 0;
+        }
+        @media (max-width: $md3 + px) {
+            padding: 0;
+            height: 100%;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        flex: 00 calc(100% / 12 * 10);
+        border: 1px solid $theme_color_1;
+        padding: 45px 65px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: $md3 + px) {
+            padding: 35px 61px;
+        }
+        @media (max-width: $md4 + px) {
+            flex: 1 1 auto;
+            padding: 15px 25px;
+        }
+    }
+
+    &__title {
+        flex: 1 1 100%;
+        display: inline-block;
+        font-size: 4rem;
+        line-height: 1.17;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 27px;
+        letter-spacing: 3.2px;
+        @media (max-width: $md3 + px) {
+            font-size: 2.7rem;
+        }
+        @media (max-width: $md4 + px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__subtitle {
+        flex: 1 1 100%;
+        display: inline-block;
+        width: 100%;
+        font-size: 1.125rem;
+        line-height: 1.58;
+
+        @media (max-width: $md3 + px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__mouse {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        @media (max-width: $md1 + px) {
+            padding-bottom: 40px;
+        }
+        @media (max-width: $md2 + px) {
+            display: none;
+        }
+        a img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+        }
+    }
+}
+

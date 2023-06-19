@@ -1,0 +1,99 @@
+.services {
+
+    &__inner {
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: $md3 + px) {
+            margin: -10px;
+        }
+    }
+
+    &__item {
+        flex: 0 0 25%;
+        padding: 1px;
+        position: relative;
+        
+        @media (max-width: $md2 + px) {
+            flex: 0 0 33.3333%;
+        }
+        @media (max-width: $md3 + px) {
+            flex: 0 0 50%;
+        }
+        @media (max-width: $md4 + px) {
+            flex: 0 0 100%;
+        }
+    }
+
+    
+
+    &__item-inner-wrap {
+        height: 100%;
+        width: 100%;
+        padding: 35px 20px 32.8px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        background-color: $theme_color_3;
+        transition: background-color $transition;
+    }
+
+    &__item-ico {
+        padding: 20px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        transition: background-color $transition;
+    }
+    &__item-ico-svg {
+        height: 30px;
+        width: 30px;
+        overflow: hidden;
+        path {
+            fill: $light_text_color;
+        }
+    }
+
+    &__item-title {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 1.125rem;
+        line-height: 1.4;
+        text-align: center;
+        z-index: 6;
+        @media (max-width: $md3 + px) {
+            font-size: 1rem;
+        }
+    }
+    &__item-link {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+    }
+
+    &__item:hover {
+        @media (min-width: $md3 + px) {
+            
+            .services__item-inner-wrap {
+                background: $theme_color_1;
+                transition: background-color $transition;
+            }
+            .services__item-ico {
+                background-color: $light_text_color;
+                transition: background-color $transition;
+                path {
+                   fill: #000000;
+                   transition:fill $transition;
+                }
+            }
+        }
+        
+    }
+}

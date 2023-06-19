@@ -1,0 +1,98 @@
+$burger_color: #ffffff;
+    
+.burger {
+    flex: 0 0 auto;
+    @media (min-width: $md2 + px){
+        display: none;
+    }
+    display: block;
+    position: relative;
+    height: 25px;
+    width: 35px;
+    z-index: 103;
+
+    span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $burger_color;
+    }
+
+    span:nth-child(1) {
+        top: 0%;
+        transform: rotate(0deg);
+        transition: transform $transition, 
+                    top $transition_delay;
+    }
+    span:nth-child(2) {
+        top: calc(50% + 1px);
+        transform: translateY(-2px);
+        opacity: 1;
+        transition: opacity $transition_delay;
+    }
+    span:nth-child(3) {
+        top: 100%;
+        transform: rotate(0deg) translateY(-100%);
+        transition: transform $transition, 
+                    top $transition_delay;
+    }
+
+    &_active {
+        span:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+            transition: top $transition, 
+                        transform $transition_delay;
+        }
+        span:nth-child(2) {
+            top: 50%;
+            opacity: 0;
+            transition: opacity $transition;
+        }
+        span:nth-child(3) {
+            top: 50%;
+            transform: rotate(-45deg);
+            transition: top $transition, transform $transition_delay;
+        }
+    }
+}
+
+.burger-menu {
+    @media (max-width: $md2 + px) {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: transform $transition;
+        height: 100%;
+        width: 100%;
+        background-color: $theme_color_3_opacity;
+        backdrop-filter: blur(5px);
+        z-index: 101;
+        
+        &_active {
+            transform: translateY(0);
+            transition: transform $transition;
+        }
+
+        ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            padding-top: 150px;
+            padding-bottom: 100px;
+            overflow: scroll;
+            li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+            }
+        }
+    }
+}

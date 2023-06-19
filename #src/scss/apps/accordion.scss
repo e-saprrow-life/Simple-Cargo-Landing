@@ -1,0 +1,23 @@
+/* Стили для аккордиона */
+.accordion {
+    &__title {
+        cursor: pointer;
+        img {
+            //transition: transform $mTrans;
+        }
+    }
+    &__title_active {
+        img {
+            transform: rotate(90deg);
+            //transition:transform $mTrans;
+        }
+    }
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        //transition: max-height $mTrans;
+    }
+    &__content_active {
+        //transition: max-height $mTrans;
+    }
+}
